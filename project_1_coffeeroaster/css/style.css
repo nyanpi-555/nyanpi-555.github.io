@@ -1,0 +1,520 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/****全体*****/
+a {
+    text-decoration: none;
+   }
+
+li {
+    list-style: none;
+   }
+button {
+    background: none;
+    border: none;
+}
+
+img {
+width:100%;
+max-width: 100%;
+height: auto;
+}
+
+/*******Header*********/
+.btn-menu {
+    display: none;
+}
+nav {
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 2;
+    background: rgba(0, 0, 0, .5);
+    padding: 10px;
+}
+.nav-main {
+    display: flex;
+    justify-content:center;
+}
+.nav-main > li + li {
+    margin-left: 55px;
+}
+
+.nav-main > li > a {
+    color: #fffffe;
+    font-size: 20px;;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+/********MainVisual*********/
+
+.bl_jumbotron {
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bl_jumbotron_inner {
+    position: relative;
+    max-width: 1230px;
+    height: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/********Section*********/
+.heading-wrapper{
+    text-align: center;
+}
+.section-inner {
+    padding: 90px 10px 110px;
+}
+
+.section-inner h2 {
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.mask_inner {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transform: translateX(-100);
+}
+
+.is-animate::before {
+    animation: maskIn .5s 1s forwards cubic-bezier(.8, 0, .5, 1),
+    maskOut .5s 1.6s forwards cubic-bezier(.8, 0, .5,1);
+}
+@keyframes maskIn {
+    from {
+        transform: translateX(-100%)
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes maskOut{
+    from{
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(101%);
+    }    
+}
+.mask_inner span {
+    animation: show .1s 1.5s forwards;
+    opacity: 0;
+}
+.mask_inner.is-animate span {
+    animation: show .1s .5s forwards;
+}
+@keyframes show {
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}
+/********About Us*********/
+.about_us p {
+    margin-bottom: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/********Our_coffee*********/
+.our_coffee {
+    background-color:#8c7851;
+
+}
+
+.our_coffee h2 {
+    color: #fffffe;
+}
+
+.our_coffee .section-inner {
+    padding: 45px 10px;
+}
+
+.card-wrap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1020px;
+    margin: 0 auto;
+}
+.card {
+    width: calc(33.3% - 20px);
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+}
+.card figure {
+    position: relative;
+} 
+.card figcaption{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fffffe;
+    text-shadow: 1px 1px 1px #000;
+}
+.card-text {
+    padding: 10px 15px;
+}
+
+/********News*********/
+
+.list-news {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.list-news > li {
+    padding: 25px 10px;
+    display: flex;
+    border-top: 1px solid #e5e5e5;
+    padding-left: 50px;
+}
+.list-news > li:last-child {
+    border-bottom: 1px solid #e5e5e5;
+}
+.list-news > li > .title {
+    color: #020826;
+    font-size: 16px;
+    padding-left: 50px;
+}
+
+.list-news > li > span {
+    display: flex;
+    align-items: center;
+}
+
+/********Find Us*********/
+.find_us {
+    position: relative;
+    height: 652px;
+}
+.box-find_us {
+    z-index: 1;
+    position: absolute;
+    max-width: 500px;
+    padding: 50px 35px;
+    background: #fff;
+    opacity: .9;
+}
+.find_us th {
+    color: #888;
+    font-size: 16px;
+    width: 28%;
+    padding: 0 10px;
+}
+.find_us td {
+    color: #020826;
+    font-size: 16px;
+    padding: 5px 30px 5px 0;
+}
+.map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/********shop_online*********/
+.shop_online-wrap {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.shop_online-wrap::before {
+    content: "";
+    display: block;
+    background: url(../images/shoponline2.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 500px;
+    height: 280px;
+    top: 0;
+    right: 0;
+}
+.shop_online-wrap::after {
+    content: "";
+    display: block;
+    background: url(../images/shoponline1.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 500px;
+    height: 280px;
+    right: 180px;
+    top: 230px;
+}
+.shop_online-inner {
+    max-width: 480px;
+    padding: 20px;
+}
+.shop_online-inner p {
+    margin-bottom: 40px;
+}
+.shop_online-wrap h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.list-shop_online {
+    margin-bottom: 50px;
+}
+.list-shop_online > li {
+    margin-bottom: 10px;
+}
+.btn-01 {
+    color: #fffffe;
+    background: #8c7851;
+    display: block;
+    width: 282px;
+    font-size: 20px;
+    padding: 20px 10px;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+.btn-01:focus,
+.btn-01:hover {
+    background-color:#eaddcf;
+    border-color: currentColor;
+    color: #020826;
+}
+/********Footer*********/
+footer {
+    background: #020826;
+    text-align: center;
+    padding: 10px;
+}
+footer small {
+
+    color: #fffffe;
+}
+/********Media query*********/
+@media screen and (max-width: 768px) {
+    .bl_jumbotron_inner > .bl_jumbotron_ttl {
+        width: 80%;
+    }
+    .section-inner{
+        padding: 40px 10px 50px;
+    }
+    nav {
+        height: 100vh;
+    }
+    .nav-main{
+        flex-direction: column;
+        height: 100%;
+    }
+    .nav-main > li {
+        text-align: center;
+        padding: 20px 0;
+    }
+    .nav-main > li  + li {
+        margin-left: 0;
+    }
+    
+    .card-wrap {
+        display: block;
+    }
+    .card {
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto 30px;
+    }
+    .list-news > li {
+        display: block;
+        padding: 25px 10px;
+    }
+    .list-news > li > .title {
+        padding-left: 0;
+    }
+    .list-news > li > span {
+        margin-bottom: 10px;
+    }
+    .find_us {
+        height: auto;
+    }
+    .box-find_us {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0 10px;
+        margin-bottom: 30px;
+    }
+    .find_us td {
+        padding: 5px 5px 5px 0;
+        width: 40%;
+    }
+    .map{
+        position: static;
+        width: 100%;
+        height: 400px;
+    }
+    .shop_online-wrap::before, .shop_online-wrap::after {
+        display: none;
+    }
+    .shop_online-inner{
+        padding: 0;
+        text-align: center;
+    }
+
+    .btn-01{
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 1040px){
+    .shop_online-wrap::before, .shop_online-wrap::after {
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .btn-menu {
+        display: block;
+        position: fixed;
+        z-index: 2;
+        top: 5px;
+        right: 5px;
+        width: 40px;
+        height: 40px;
+        background: #333;
+    }
+    .btn-menu-lines{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 20px;
+        height: 2px;
+        margin: auto;
+        background: #fff;
+        -webkit-transition: .3s;
+        transition: .3s;
+    }
+    .btn-menu-lines::before, .btn-menu-lines::after{
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        content: "";
+        -webkit-transition: .3s;
+        transition: .3s;
+        -webkit-transform-origin: 2.85714px center;
+        -ms-transform-origin:2.85714px center ;
+        transform-origin: 2.85714px center;
+    }
+    .btn-menu-lines::before{
+        top: 6px;
+    }
+    .btn-menu-lines::after{
+        top: -6px;
+    }
+    /*********************************************/
+    .btn-menu.is-animate .btn-menu-lines{
+        background: none;
+    }
+    .btn-menu.btn-menu.is-animate .btn-menu-lines::before{
+        -webkit-transform: rotate3d(0,0,2,45deg);
+        transform: rotate3d(0,0,2,45deg);
+        transform-origin: 50% 50%;
+        top: 0;
+    }
+    .btn-menu.btn-menu.is-animate .btn-menu-lines::after{
+        -webkit-transform: rotate3d(0,0,2,-45deg);
+        transform: rotate3d(0,0,2,-45deg);
+        transform-origin: 50% 50%;
+        top: 0;
+    }
+}
+  /**********************Contact***********************/
+.contact p {
+    margin-bottom: 30px;
+    font-size: 20px;
+    text-align: center;
+    
+}
+.contact_btn_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
