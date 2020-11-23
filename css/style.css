@@ -383,7 +383,6 @@ a.bl_card {
     }
   }
   
-  
   .bl_halfMedia_txt {
     margin-bottom: 20px;
 
@@ -521,6 +520,10 @@ a.bl_card {
 /*********************************************
 コンセプト
 *********************************************/
+.bl_media_imgWrapper{
+  width: 100%;
+  margin: 0 auto;
+}
 .bl_media_imgWrapper > img {
   object-fit: contain;
   box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
